@@ -1,0 +1,463 @@
+SECTION "bank1", ROMX
+
+INCLUDE "data/sprites/facings.asm"
+INCLUDE "engine/events/black_out.asm"
+INCLUDE "data/pokemon/mew.asm"
+INCLUDE "engine/battle/safari_zone.asm"
+INCLUDE "engine/movie/title.asm"
+INCLUDE "engine/pokemon/load_mon_data.asm"
+INCLUDE "data/items/prices.asm"
+INCLUDE "data/items/names.asm"
+INCLUDE "data/text/unused_names.asm"
+INCLUDE "engine/gfx/sprite_oam.asm"
+INCLUDE "engine/gfx/oam_dma.asm"
+INCLUDE "engine/link/print_waiting_text.asm"
+INCLUDE "engine/overworld/sprite_collisions.asm"
+INCLUDE "engine/debug/debug_menu.asm"
+INCLUDE "engine/events/pick_up_item.asm"
+INCLUDE "engine/overworld/movement.asm"
+INCLUDE "engine/link/cable_club.asm"
+INCLUDE "engine/menus/main_menu.asm"
+INCLUDE "engine/movie/oak_speech/oak_speech.asm"
+INCLUDE "engine/overworld/special_warps.asm"
+INCLUDE "engine/debug/debug_party.asm"
+INCLUDE "engine/menus/naming_screen.asm"
+INCLUDE "engine/movie/oak_speech/oak_speech2.asm"
+INCLUDE "engine/items/subtract_paid_money.asm"
+INCLUDE "engine/menus/swap_items.asm"
+INCLUDE "engine/events/pokemart.asm"
+INCLUDE "engine/pokemon/learn_move.asm"
+INCLUDE "engine/events/pokecenter.asm"
+INCLUDE "engine/events/set_blackout_map.asm"
+INCLUDE "engine/menus/display_text_id_init.asm"
+INCLUDE "engine/menus/draw_start_menu.asm"
+INCLUDE "engine/link/cable_club_npc.asm"
+INCLUDE "engine/menus/text_box.asm"
+INCLUDE "engine/battle/move_effects/drain_hp.asm"
+INCLUDE "engine/menus/players_pc.asm"
+INCLUDE "engine/pokemon/remove_mon.asm"
+INCLUDE "engine/events/display_pokedex.asm"
+
+
+; Hooks for color hack
+INCLUDE "color/cable_club.asm"
+INCLUDE "color/oak_intro.asm"
+IF GEN_2_GRAPHICS
+INCLUDE "color/load_hp_and_exp_bar.asm"
+ENDC
+
+
+SECTION "bank3", ROMX
+
+INCLUDE "engine/joypad.asm"
+INCLUDE "data/maps/songs.asm"
+INCLUDE "data/maps/map_header_banks.asm"
+INCLUDE "engine/overworld/clear_variables.asm"
+INCLUDE "engine/overworld/player_state.asm"
+INCLUDE "engine/events/poison.asm"
+INCLUDE "engine/overworld/tilesets.asm"
+INCLUDE "engine/overworld/daycare_exp.asm"
+INCLUDE "data/maps/toggleable_objects.asm"
+INCLUDE "engine/overworld/field_move_messages.asm"
+INCLUDE "engine/overworld/field_moves_overworld.asm"
+INCLUDE "engine/items/inventory.asm"
+INCLUDE "engine/overworld/wild_mons.asm"
+INCLUDE "engine/items/item_effects.asm"
+INCLUDE "engine/items/repel_prompt.asm"
+INCLUDE "engine/menus/draw_badges.asm"
+INCLUDE "engine/overworld/update_map.asm"
+INCLUDE "engine/overworld/cut.asm"
+INCLUDE "engine/overworld/toggleable_objects.asm"
+INCLUDE "engine/overworld/push_boulder.asm"
+INCLUDE "engine/pokemon/add_mon.asm"
+INCLUDE "engine/flag_action.asm"
+INCLUDE "engine/events/heal_party.asm"
+INCLUDE "engine/math/bcd.asm"
+INCLUDE "engine/movie/oak_speech/init_player_data.asm"
+INCLUDE "engine/items/get_bag_item_quantity.asm"
+INCLUDE "engine/overworld/pathfinding.asm"
+INCLUDE "engine/gfx/hp_bar.asm"
+INCLUDE "engine/events/hidden_events/bookshelves.asm"
+INCLUDE "engine/events/hidden_events/indigo_plateau_statues.asm"
+INCLUDE "engine/events/hidden_events/book_or_sculpture.asm"
+INCLUDE "engine/events/hidden_events/elevator.asm"
+INCLUDE "engine/events/hidden_events/town_map.asm"
+INCLUDE "engine/events/hidden_events/pokemon_stuff.asm"
+
+INCLUDE "color/update_hp_bar.asm"
+
+
+SECTION "Font Graphics", ROMX
+
+INCLUDE "gfx/font.asm"
+
+
+SECTION "Battle Engine 1", ROMX
+
+INCLUDE "engine/overworld/is_player_just_outside_map.asm"
+INCLUDE "engine/pokemon/status_screen.asm"
+INCLUDE "engine/menus/party_menu.asm"
+INCLUDE "gfx/player.asm"
+INCLUDE "engine/overworld/turn_sprite.asm"
+INCLUDE "engine/menus/start_sub_menus.asm"
+INCLUDE "engine/items/tms.asm"
+INCLUDE "engine/battle/end_of_battle.asm"
+INCLUDE "engine/battle/wild_encounters.asm"
+INCLUDE "engine/battle/move_effects/recoil.asm"
+INCLUDE "engine/battle/move_effects/conversion.asm"
+INCLUDE "engine/battle/move_effects/haze.asm"
+INCLUDE "engine/battle/get_trainer_name.asm"
+INCLUDE "engine/math/random.asm"
+
+INCLUDE "color/status_screen.asm"
+
+IF GEN_2_GRAPHICS
+EXPBarGraphics:  INCBIN "gfx/gs/exp_bar.2bpp"
+EXPBarGraphicsEnd:
+ENDC
+
+
+SECTION "Battle Engine 2", ROMX
+
+INCLUDE "engine/gfx/load_pokedex_tiles.asm"
+INCLUDE "engine/overworld/map_sprites.asm"
+INCLUDE "engine/overworld/emotion_bubbles.asm"
+INCLUDE "engine/events/evolve_trade.asm"
+INCLUDE "engine/battle/move_effects/substitute.asm"
+INCLUDE "engine/menus/pc.asm"
+
+
+SECTION "Play Time", ROMX
+
+INCLUDE "engine/play_time.asm"
+
+
+SECTION "Doors and Ledges", ROMX
+
+INCLUDE "engine/overworld/auto_movement.asm"
+INCLUDE "engine/overworld/doors.asm"
+INCLUDE "engine/overworld/ledges.asm"
+
+
+SECTION "Pokémon Names", ROMX
+
+INCLUDE "data/pokemon/names.asm"
+INCLUDE "engine/movie/oak_speech/clear_save.asm"
+INCLUDE "engine/events/elevator.asm"
+
+
+SECTION "Hidden Events 1", ROMX
+
+INCLUDE "engine/menus/oaks_pc.asm"
+INCLUDE "engine/events/hidden_events/new_bike.asm"
+INCLUDE "engine/events/hidden_events/oaks_lab_posters.asm"
+INCLUDE "engine/events/hidden_events/safari_game.asm"
+INCLUDE "engine/events/hidden_events/cinnabar_gym_quiz.asm"
+INCLUDE "engine/events/hidden_events/magazines.asm"
+INCLUDE "engine/events/hidden_events/bills_house_pc.asm"
+INCLUDE "engine/events/hidden_events/oaks_lab_email.asm"
+
+
+SECTION "Bill's PC", ROMX
+
+INCLUDE "engine/pokemon/bills_pc.asm"
+
+
+SECTION "Battle Engine 3", ROMX
+
+INCLUDE "engine/battle/print_type.asm"
+INCLUDE "engine/battle/save_trainer_name.asm"
+INCLUDE "engine/battle/move_effects/focus_energy.asm"
+
+
+SECTION "Battle Engine 4", ROMX
+
+INCLUDE "engine/battle/move_effects/leech_seed.asm"
+
+
+SECTION "Battle Engine 5", ROMX
+
+INCLUDE "engine/battle/display_effectiveness.asm"
+INCLUDE "gfx/trainer_card.asm"
+INCLUDE "engine/items/tmhm.asm"
+INCLUDE "engine/battle/scale_sprites.asm"
+INCLUDE "engine/battle/move_effects/pay_day.asm"
+INCLUDE "engine/slots/game_corner_slots2.asm"
+
+
+SECTION "Battle Engine 6", ROMX
+
+INCLUDE "engine/battle/move_effects/mist.asm"
+INCLUDE "engine/battle/move_effects/one_hit_ko.asm"
+
+
+SECTION "Slot Machines", ROMX
+
+INCLUDE "engine/movie/title2.asm"
+INCLUDE "engine/battle/link_battle_versus_text.asm"
+INCLUDE "engine/slots/slot_machine.asm"
+INCLUDE "engine/events/pewter_guys.asm"
+INCLUDE "engine/math/multiply_divide.asm"
+INCLUDE "engine/slots/game_corner_slots.asm"
+
+
+SECTION "Battle Engine 7", ROMX
+
+INCLUDE "data/moves/moves.asm"
+INCLUDE "data/pokemon/base_stats.asm"
+INCLUDE "data/pokemon/cries.asm"
+INCLUDE "engine/battle/unused_stats_functions.asm"
+INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
+INCLUDE "engine/battle/trainer_ai.asm"
+INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
+INCLUDE "gfx/trade.asm"
+INCLUDE "engine/pokemon/evos_moves.asm"
+INCLUDE "engine/battle/move_effects/heal.asm"
+INCLUDE "engine/battle/move_effects/transform.asm"
+INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
+
+INCLUDE "color/draw_hud_pokeball_gfx.asm"
+
+
+SECTION "Battle Core", ROMX
+
+INCLUDE "engine/battle/core.asm"
+;INCLUDE "engine/battle/effects.asm"
+
+
+SECTION "bank10", ROMX
+
+INCLUDE "engine/menus/pokedex.asm"
+INCLUDE "engine/movie/trade.asm"
+INCLUDE "engine/movie/intro.asm"
+INCLUDE "engine/movie/trade2.asm"
+
+; Hooks for color hack
+INCLUDE "color/trade.asm"
+
+
+SECTION "Pokédex Rating", ROMX
+
+INCLUDE "engine/events/pokedex_rating.asm"
+
+
+SECTION "Hidden Events Core", ROMX
+
+INCLUDE "engine/overworld/hidden_events.asm"
+
+
+SECTION "Screen Effects", ROMX
+
+INCLUDE "engine/gfx/screen_effects.asm"
+
+
+SECTION "Predefs", ROMX
+
+INCLUDE "engine/events/give_pokemon.asm"
+INCLUDE "engine/predefs.asm"
+
+
+SECTION "Battle Engine 8", ROMX
+
+INCLUDE "engine/battle/init_battle_variables.asm"
+INCLUDE "engine/battle/move_effects/paralyze.asm"
+
+
+SECTION "Hidden Events 2", ROMX
+
+INCLUDE "engine/events/card_key.asm"
+INCLUDE "engine/events/prize_menu.asm"
+INCLUDE "engine/events/hidden_events/school_notebooks.asm"
+INCLUDE "engine/events/hidden_events/fighting_dojo.asm"
+INCLUDE "engine/events/hidden_events/indigo_plateau_hq.asm"
+
+
+SECTION "Battle Engine 9", ROMX
+
+INCLUDE "engine/battle/experience.asm"
+
+
+SECTION "Diploma", ROMX
+
+INCLUDE "engine/events/diploma.asm"
+
+
+SECTION "Trainer Sight", ROMX
+
+INCLUDE "engine/overworld/trainer_sight.asm"
+
+IF GEN_2_GRAPHICS
+INCLUDE "color/exp_bar.asm"
+ENDC
+
+
+SECTION "Shiny and Gender", ROMX
+
+INCLUDE "engine/pokemon/shiny_gender.asm"
+
+
+; Was in bank $16, in front of "Maps 14". It grew, and nothing in a map bank may move
+; (see layout.link), so it lives in the mostly empty bank $0C now.
+SECTION "Battle Engine 10", ROMX, BANK[$0C]
+
+INCLUDE "engine/battle/common_text.asm"
+INCLUDE "engine/pokemon/experience.asm"
+INCLUDE "engine/events/oaks_aide.asm"
+
+
+SECTION "Saffron Guards", ROMX
+
+INCLUDE "engine/events/saffron_guards.asm"
+
+
+SECTION "Starter Dex", ROMX
+
+INCLUDE "engine/events/starter_dex.asm"
+
+
+SECTION "Hidden Events 3", ROMX
+
+INCLUDE "engine/pokemon/set_types.asm"
+INCLUDE "engine/events/hidden_events/reds_room.asm"
+INCLUDE "engine/events/hidden_events/route_15_binoculars.asm"
+INCLUDE "engine/events/hidden_events/museum_fossils.asm"
+INCLUDE "engine/events/hidden_events/school_blackboard.asm"
+INCLUDE "engine/events/hidden_events/vermilion_gym_trash.asm"
+
+
+SECTION "Cinnabar Lab Fossils", ROMX
+
+INCLUDE "engine/events/cinnabar_lab.asm"
+
+
+SECTION "Hidden Events 4", ROMX
+
+INCLUDE "engine/events/hidden_events/gym_statues.asm"
+INCLUDE "engine/events/hidden_events/bench_guys.asm"
+INCLUDE "engine/events/hidden_events/blues_room.asm"
+INCLUDE "engine/events/hidden_events/pokecenter_pc.asm"
+
+
+SECTION "Battle Engine 11", ROMX
+
+INCLUDE "engine/battle/decrement_pp.asm"
+INCLUDE "gfx/version.asm"
+
+
+SECTION "bank1C", ROMX
+
+INCLUDE "engine/movie/splash.asm"
+INCLUDE "engine/movie/hall_of_fame.asm"
+INCLUDE "engine/overworld/healing_machine.asm"
+INCLUDE "engine/overworld/player_animations.asm"
+INCLUDE "engine/battle/ghost_marowak_anim.asm"
+INCLUDE "engine/battle/battle_transitions.asm"
+INCLUDE "engine/items/town_map.asm"
+INCLUDE "engine/gfx/mon_icons.asm"
+INCLUDE "engine/events/in_game_trades.asm"
+INCLUDE "engine/gfx/palettes.asm"
+
+SECTION "Engine Save", ROMX
+
+INCLUDE "engine/menus/save.asm"
+ 
+BlackTile:
+	REPT 16
+	db $ff
+	ENDR
+BlackTileEnd:
+
+INCLUDE "color/ghost_marowak_anim.asm"
+INCLUDE "color/color.asm"
+
+
+SECTION "Itemfinder 1", ROMX
+
+INCLUDE "engine/movie/credits.asm"
+INCLUDE "engine/pokemon/status_ailments.asm"
+INCLUDE "engine/items/itemfinder.asm"
+
+
+SECTION "Vending Machine", ROMX
+
+INCLUDE "engine/events/vending_machine.asm"
+
+
+; CalcStats and CalcStat, moved out of the home bank. In a section of its own in the
+; mostly empty bank $0C: most sections named in layout.link sit between map sections,
+; which must not move.
+SECTION "Calc Stats", ROMX, BANK[$0C]
+
+INCLUDE "engine/pokemon/calc_stats.asm"
+
+
+; Tells how much room the box has left after a #MON went to it. Code and text.
+SECTION "Box Space", ROMX, BANK[$0C]
+
+INCLUDE "engine/pokemon/box_space.asm"
+
+
+; The link menu's byte exchange for the game that is being clocked. In bank 1 with
+; LinkMenu, in a section of its own so that nothing else in the bank moves.
+SECTION "Link Menu Exchange", ROMX, BANK[$01]
+
+INCLUDE "engine/link/link_menu_exchange.asm"
+
+
+; Unique party icons: graphics in two banks of their own, routines behind them, and
+; their colours with the rest of the colour code. All in new sections; no section
+; that existed before grows.
+INCLUDE "engine/gfx/party_mon_icons.asm"
+INCLUDE "color/icon_palettes.asm"
+
+; (eleven bytes at the very end of the bank, behind its free space)
+SECTION "Party Menu Switch", ROMX[$7ff5], BANK[$04]
+
+INCLUDE "engine/menus/party_menu_switch.asm"
+
+
+; MOVE <PKMN> in Bill's PC: the box as a grid of icons. In a bank that was empty (a new
+; section in a bank that has floating sections makes the linker place those anew), with
+; a helper in the bank of the shiny and gender code and the menu's new entry in the
+; PC's bank.
+SECTION "Box Grid", ROMX, BANK[$2F]
+
+INCLUDE "engine/pokemon/box_grid.asm"
+
+; (at a fixed address near the end of the bank's free space: left to the linker, it takes
+; the place of the Celadon Mart item lists, which then move)
+SECTION "Box Grid Mon Info", ROMX[$7f00], BANK[$15]
+
+INCLUDE "engine/pokemon/box_grid_mon_info.asm"
+
+SECTION "Bill's PC Menu", ROMX, BANK[$08]
+
+INCLUDE "engine/pokemon/bills_pc_menu.asm"
+
+; Box changes for the grid and the box list with counts: in the bank of the save code,
+; at a fixed address in its free space.
+SECTION "Box Storage", ROMX[$6c50], BANK[$1C]
+
+INCLUDE "engine/pokemon/box_storage.asm"
+
+
+SECTION "Itemfinder 2", ROMX
+
+INCLUDE "engine/menus/league_pc.asm"
+INCLUDE "engine/events/hidden_items.asm"
+
+
+SECTION "bank1E", ROMX
+
+INCLUDE "engine/battle/animations.asm"
+INCLUDE "engine/overworld/cut2.asm"
+INCLUDE "engine/overworld/dust_smoke.asm"
+INCLUDE "gfx/fishing.asm"
+INCLUDE "data/moves/animations.asm"
+INCLUDE "data/battle_anims/subanimations.asm"
+INCLUDE "data/battle_anims/frame_blocks.asm"
+INCLUDE "engine/movie/evolution.asm"
+INCLUDE "engine/overworld/elevator.asm"
+INCLUDE "engine/items/tm_prices.asm"
+
+INCLUDE "color/animations.asm"

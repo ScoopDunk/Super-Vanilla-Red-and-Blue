@@ -114,6 +114,15 @@ One thing to know: the game uses the shiny patch's random number generator, so w
 Pokémon can roll shiny DVs at the standard 1 in 8192. That changes the dice, not the
 data. The DVs it rolls are ordinary values that any cartridge Pokémon can hold.
 
+## Building from source
+
+This repository is the game's full source: the pokered disassembly with the Full Color
+hack and every change above. Install the tools as described in [INSTALL.md](INSTALL.md)
+(RGBDS 1.0.x), then run `make` to build `pokered.gbc` (Super Vanilla Red) and
+`pokeblue.gbc` (Super Vanilla Blue). `make compare` checks both against the checksums of
+the released games. [NOTES.md](NOTES.md) explains how each feature works and where it is
+in the source.
+
 ## Credits
 
 - Pokémon Red and Blue: Game Freak, Nintendo, Creatures
